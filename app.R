@@ -88,7 +88,7 @@ server <- function(input, output, session){
             if(received[length(received)]==0) break # do not check for more confirmations if previous didn't arrive yet
         }
         data.frame(confirmations = seq_along(received)-1L, received = received)
-    }, include.rownames=FALSE)
+    }, digits=c(0,0,8), include.rownames=FALSE)
     
     # use kraken ticker rates to calc fiat value - every 60 seconds
     
